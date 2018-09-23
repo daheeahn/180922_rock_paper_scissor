@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Random;
 
@@ -31,6 +32,10 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.text) TextView text;
     @BindView(R.id.reset) Button reset;
 
+    @BindView(R.id.com_score) TextView com_score_text;
+    @BindView(R.id.user_score) TextView user_score_text;
+    int com_score = 0;
+    int user_score = 0;
 
     int current_user;
     int randomNum;
@@ -98,11 +103,17 @@ public class MainActivity extends AppCompatActivity {
         //0 : 비김, 1 : user가 이김, -1 : user가 짐
 
         if (indexArray[randomNum][current_user] == 0)
-            result.setText("비겼어요");
-        else if (indexArray[randomNum][current_user] == 1)
-            result.setText("이겼어요");
-        else if (indexArray[randomNum][current_user] == -1)
-            result.setText("졌어요");
+            Toast.makeText(this, "비겼어요", Toast.LENGTH_SHORT).show();
+        else if (indexArray[randomNum][current_user] == 1) {
+            user_score++;
+            Toast.makeText(this, "이겼어요", Toast.LENGTH_SHORT).show();
+        }
+        else if (indexArray[randomNum][current_user] == -1) {
+            com_score++;
+            Toast.makeText(this, "졌어요", Toast.LENGTH_SHORT).show();
+        }
+
+        show_score();
 
     }
 
@@ -132,6 +143,11 @@ public class MainActivity extends AppCompatActivity {
         user_paper.setVisibility(View.INVISIBLE);
         user_scissor.setVisibility(View.INVISIBLE);
         result.setText("선택하세요↓");
+    }
+
+    public void show_score() {
+        com_score_text.setText("컴퓨터 : " + com_score + "승");
+        user_score_text.setText("나 : " + user_score + "승");
     }
 
 }
