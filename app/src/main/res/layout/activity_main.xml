@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="6"
+        android:orientation="horizontal">
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/com_rock"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/rock"
+                android:visibility="visible"/>
+
+            <ImageView
+                android:id="@+id/com_paper"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/paper"
+                android:visibility="invisible"/>
+
+            <ImageView
+                android:id="@+id/com_scissor"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/scissor"
+                android:visibility="invisible"/>
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="컴퓨터를 이겨랏!"
+                android:textSize="25dp"
+                android:visibility="visible"
+                android:gravity="center"/>
+
+            <ImageView
+                android:id="@+id/user_rock"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/rock"
+                android:visibility="invisible"/>
+
+            <ImageView
+                android:id="@+id/user_paper"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/paper"
+                android:visibility="invisible"/>
+
+            <ImageView
+                android:id="@+id/user_scissor"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/scissor"
+                android:visibility="invisible"/>
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="선택하세요↓"
+            android:textSize="20dp"/>
+
+        <Button
+            android:id="@+id/reset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="초기화" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/rock"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/rock"
+            android:layout_weight="1"/>
+
+        <ImageView
+            android:id="@+id/paper"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/paper"
+            android:layout_weight="1"/>
+
+        <ImageView
+            android:id="@+id/scissor"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/scissor"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+</LinearLayout>
